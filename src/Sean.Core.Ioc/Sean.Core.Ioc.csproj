@@ -8,6 +8,7 @@
     <Company>Sean Studio</Company>
     <Copyright>Copyright © Sean Studio 2020</Copyright>
     <Description>IOC：Dependency Injection</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

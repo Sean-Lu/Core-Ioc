@@ -50,7 +50,7 @@ namespace Sean.Core.Ioc
             {
                 var configurationBuilder = new ConfigurationBuilder()
                     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                    .AddJsonFile("appsettings.json", true)
+                    .AddJsonFile("appsettings.json", true, true)
                     .AddEnvironmentVariables();
                 var configuration = configurationBuilder.Build();
 
