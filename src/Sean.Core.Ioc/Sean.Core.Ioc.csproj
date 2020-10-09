@@ -9,6 +9,7 @@
     <Copyright>Copyright © Sean Studio 2020</Copyright>
     <Description>IOC：Dependency Injection</Description>
     <Version>1.0.1</Version>
+    <PackageProjectUrl>https://github.com/Sean-Lu/Core-Ioc.git</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
