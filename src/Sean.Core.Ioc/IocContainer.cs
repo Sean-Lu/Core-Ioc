@@ -5,35 +5,34 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Sean.Core.Ioc
 {
     /// <summary>
-    /// IOC：DI（依赖注入）
+    /// IOC: Dependency Injection
     /// </summary>
-    public class ServiceManager
+    public class IocContainer
     {
+        private IocContainer()
+        {
+        }
+
+        public static IocContainer Instance { get; } = new IocContainer();
+
+        public IServiceCollection ServiceCollection => _serviceCollection;
+        public IServiceProvider ServiceProvider => _serviceProvider;
+
         /// <summary>
         /// IOC容器
         /// </summary>
-        private static IServiceCollection _serviceCollection;
+        private IServiceCollection _serviceCollection;
         /// <summary>
         /// 服务提供者
         /// </summary>
-        private static IServiceProvider _serviceProvider;
-
-        /// <summary>
-        /// 配置服务
-        /// </summary>
-        /// <param name="services"></param>
-        public static void ConfigureServices(IServiceCollection services)
-        {
-            _serviceCollection = services ?? throw new ArgumentNullException(nameof(services));
-            _serviceProvider = _serviceCollection.BuildServiceProvider();
-        }
+        private IServiceProvider _serviceProvider;
 
         /// <summary>
         /// 配置服务
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configServices"></param>
-        public static void ConfigureServices(IServiceCollection services, Action<IServiceCollection> configServices)
+        public void ConfigureServices(IServiceCollection services, Action<IServiceCollection> configServices = null)
         {
             _serviceCollection = services ?? throw new ArgumentNullException(nameof(services));
 
@@ -44,7 +43,7 @@ namespace Sean.Core.Ioc
         /// 配置服务
         /// </summary>
         /// <param name="configServices"></param>
-        public static void ConfigureServices(Action<IServiceCollection> configServices)
+        public void ConfigureServices(Action<IServiceCollection> configServices)
         {
             if (_serviceCollection == null)
             {
@@ -70,14 +69,19 @@ namespace Sean.Core.Ioc
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T GetService<T>()
+        public T GetService<T>()
         {
-            if (_serviceProvider == null)
-            {
-                throw new InvalidOperationException($"Before executing this method, please execute the {nameof(ConfigureServices)} method.");
-            }
+            return _serviceProvider != null ? _serviceProvider.GetService<T>() : default;
+        }
 
-            return _serviceProvider.GetService<T>();
+        /// <summary>
+        /// 获取服务
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T GetRequiredService<T>()
+        {
+            return _serviceProvider != null ? _serviceProvider.GetRequiredService<T>() : default;
         }
     }
 }

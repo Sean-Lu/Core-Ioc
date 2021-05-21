@@ -1,6 +1,6 @@
 ## 简介
 
-> 通过DI（依赖注入）实现IOC，核心类：`ServiceManager`
+> 通过DI（依赖注入）实现IOC，核心类：`IocContainer`
 
 ## Packages
 
@@ -20,4 +20,4 @@ PM> Install-Package Sean.Core.Ioc
 
 ## 使用示例
 
-> 项目：test\Demo.NetCore
+> 项目：examples\Example.NetCore

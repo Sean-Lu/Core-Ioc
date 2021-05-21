@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sean.Core.Ioc", "src\Sean.Core.Ioc\Sean.Core.Ioc.csproj", "{F52BD96B-B951-4177-AF7A-B0145BC716E5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{0FF04EF2-9BB4-43DA-8F33-3F3B5882CA41}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{0FF04EF2-9BB4-43DA-8F33-3F3B5882CA41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.NetCore", "test\Demo.NetCore\Demo.NetCore.csproj", "{7418218A-F607-479A-8429-43D910AEA63B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.NetCore", "examples\Example.NetCore\Example.NetCore.csproj", "{7418218A-F607-479A-8429-43D910AEA63B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
