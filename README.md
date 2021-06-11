@@ -1,6 +1,10 @@
 ## 简介
 
-> 通过DI（依赖注入）实现IOC，核心类：`IocContainer`
+> 核心类：`IocContainer`
+
+> `IOC`：依赖注入（`Dependency Injection`）是用于实现控制反转（`Inversion of Control`）的最常见的方式之一。
+
+> 常见的`IOC`框架：[`Autofac`](https://github.com/autofac/Autofac)、[`SimpleInjector`](https://github.com/simpleinjector/SimpleInjector)等
 
 ## Packages
 
@@ -10,7 +14,7 @@
 
 ## Nuget包引用
 
-> **Id：Sean.Core.Ioc**
+> **Id：`Sean.Core.Ioc`**
 
 - Package Manager
 
